@@ -1,0 +1,1 @@
+It's study project to learn some stuff about Spring
