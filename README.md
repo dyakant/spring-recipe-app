@@ -1,5 +1,5 @@
 ## Spring Boot Recipe Application
-***
+
 ### About
 It's a study project to practice JPA in Spring.
 
