@@ -1,1 +1,3 @@
-It's study project to learn some stuff about Spring
+## Spring Boot Recipe Application
+***
+It's a study project to practice JPA in Spring.
