@@ -1,7 +1,8 @@
 ## Spring Boot Recipe Application
 
 ### About
-It's a study project to practice JPA in Spring.
+It's a study project to practice JPA in Spring.  
+Recap possible Entities relationships, JPA annotations
 
 ### Data Model
 
