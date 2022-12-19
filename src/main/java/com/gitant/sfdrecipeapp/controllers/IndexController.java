@@ -11,6 +11,7 @@ public class IndexController {
 
     @RequestMapping({"", "/", "/index"})
     public String getIndexPage(){
+        System.out.println("---- getIndexPage is triggered now. Yeap!");
         return "index";
     }
 }
