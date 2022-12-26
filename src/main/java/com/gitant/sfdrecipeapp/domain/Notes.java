@@ -1,6 +1,10 @@
 package com.gitant.sfdrecipeapp.domain;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDateTime;
 
 /**
  * Created by Anton Dyakov on 19.12.2022
@@ -14,6 +18,10 @@ public class Notes {
     private Recipe recipe;
     @Lob
     private String recipeNotes;
+    @CreationTimestamp
+    private LocalDateTime createDate;
+    @UpdateTimestamp
+    private LocalDateTime updateTime;
 
     public Long getId() {
         return id;
