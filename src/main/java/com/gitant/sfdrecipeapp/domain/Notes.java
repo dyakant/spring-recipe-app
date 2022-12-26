@@ -27,4 +27,11 @@ public class Notes {
         this.recipe = recipe;
     }
 
+    public String getRecipeNotes() {
+        return recipeNotes;
+    }
+
+    public void setRecipeNotes(String recipeNotes) {
+        this.recipeNotes = recipeNotes;
+    }
 }
