@@ -1,6 +1,9 @@
 package com.gitant.sfdrecipeapp.domain;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -9,6 +12,9 @@ import java.time.LocalDateTime;
 /**
  * Created by Anton Dyakov on 19.12.2022
  */
+@Data
+@EqualsAndHashCode(exclude = {"recipe"})
+@ToString(exclude = {"recipe"})
 @Entity
 public class Notes {
     @Id
@@ -22,24 +28,4 @@ public class Notes {
     private LocalDateTime createDate;
     @UpdateTimestamp
     private LocalDateTime updateTime;
-
-    public Long getId() {
-        return id;
-    }
-
-    public Recipe getRecipe() {
-        return recipe;
-    }
-
-    public void setRecipe(Recipe recipe) {
-        this.recipe = recipe;
-    }
-
-    public String getRecipeNotes() {
-        return recipeNotes;
-    }
-
-    public void setRecipeNotes(String recipeNotes) {
-        this.recipeNotes = recipeNotes;
-    }
 }

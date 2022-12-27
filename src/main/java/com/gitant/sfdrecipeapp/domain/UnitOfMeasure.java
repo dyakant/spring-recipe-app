@@ -1,10 +1,12 @@
 package com.gitant.sfdrecipeapp.domain;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 /**
  * Created by Anton Dyakov on 20.12.2022
  */
+@Data
 @Entity
 public class UnitOfMeasure {
     @Id
@@ -14,23 +16,4 @@ public class UnitOfMeasure {
     @OneToOne
     private Ingredient ingredient;
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getUom() {
-        return uom;
-    }
-
-    public void setUom(String uom) {
-        this.uom = uom;
-    }
-
-    public Ingredient getIngredient() {
-        return ingredient;
-    }
-
-    public void setIngredient(Ingredient ingredient) {
-        this.ingredient = ingredient;
-    }
 }

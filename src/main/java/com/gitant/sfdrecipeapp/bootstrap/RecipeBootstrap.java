@@ -4,6 +4,8 @@ import com.gitant.sfdrecipeapp.domain.*;
 import com.gitant.sfdrecipeapp.repositories.CategoryRepository;
 import com.gitant.sfdrecipeapp.repositories.RecipeRepository;
 import com.gitant.sfdrecipeapp.repositories.UnitOfMeasureRepository;
+import jakarta.transaction.Transactional;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -16,6 +18,7 @@ import java.util.Optional;
 /**
  * Created by Anton Dyakov on 24.12.2022
  */
+@Slf4j
 @Component
 public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEvent> {
 
@@ -30,6 +33,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     }
 
     @Override
+    @Transactional
     public void onApplicationEvent(ContextRefreshedEvent event) {
         recipeRepository.saveAll(getRecipes());
     }
@@ -102,6 +106,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         //add to return list
         recipes.add(guacRecipe);
+        log.debug("Added a guacamole recipe");
 
         //Yummy Tacos
         Recipe tacosRecipe = new Recipe();
@@ -156,6 +161,8 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         tacosRecipe.getCategories().add(mexicanCategory);
 
         recipes.add(tacosRecipe);
+
+        log.debug("added a taco recipe");
 
         return recipes;
     }
